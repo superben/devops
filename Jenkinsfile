@@ -14,6 +14,8 @@ node (nodeLabel){
 		    checkout scm
 		    
 		}
+		
+/*			
 		stage('Code scanning'){
 			echo "Begin code scanning"
 			def scannerHome = tool 'SonarQube Scanner';
@@ -32,7 +34,7 @@ node (nodeLabel){
 		}
 		//quality gate
                 sleep 30
-/*			
+			
         stage('Quality Gate') {
                     timeout(3) {
                         def qg = waitForQualityGate()
