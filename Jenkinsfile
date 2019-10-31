@@ -32,6 +32,7 @@ node (nodeLabel){
 		}
 		//quality gate
                 sleep 30
+/*			
         stage('Quality Gate') {
                     timeout(3) {
                         def qg = waitForQualityGate()
@@ -40,7 +41,7 @@ node (nodeLabel){
                         }
                     }
             }
-
+*/
 		stage('Build') {
 			withMaven(jdk: 'JDK  8u181', maven: 'Maven 3.5.4'){
 				sh 'mvn -U clean compile'
@@ -56,7 +57,9 @@ node (nodeLabel){
 		} catch (err) {
             throw err
         }
-		 //junit for develop branch
+
+
+        //junit for develop branch
         if (env.BRANCH_NAME == 'develop') {
             try {
                 stage('Unit Test') {
