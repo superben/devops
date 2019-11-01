@@ -12,7 +12,8 @@ node (nodeLabel){
 
 					stage('Checkout Code') {
 						echo "Begin Checkout Code"
-						//git credentialsId: '1vTYN2PCZjd2GkRy5zrU', url: 'https://yldevsvm.faw.com/hqcom-grp/dcep-devops-sample.git'
+						// git credentialsId: '1vTYN2PCZjd2GkRy5zrU', url: 'https://yldevsvm.faw.com/hqcom-grp/dcep-devops-sample.git'
+						git url: 'https://github.com/superben/devops.git'
 					    checkout scm
 					}
 					
@@ -56,8 +57,9 @@ node (nodeLabel){
 							sh 'mvn -U package -Dmaven.test.skip=true'
 						}
 					}
-				}
+
 */
+				}
 			} catch (err) {
 	            throw err
 	        }
