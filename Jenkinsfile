@@ -6,7 +6,7 @@ node (nodeLabel){
 	withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin:/opt/apache-maven-3.5.4/bin'])
 		{
 			dateVersion = sh(script: "date \"+%Y%m%d%H%M%S\"", returnStdout: true).trim()
-	/*		
+
 			try {
 				timestamps {
 
@@ -16,7 +16,7 @@ node (nodeLabel){
 					    checkout scm
 					}
 					
-
+	/*
 					stage('Code scanning'){
 						echo "Begin code scanning"
 						def scannerHome = tool 'SonarQube Scanner';
@@ -57,11 +57,12 @@ node (nodeLabel){
 						}
 					}
 				}
+*/
 			} catch (err) {
 	            throw err
 	        }
 
-
+/*
 	        //junit for develop branch
 	        if (env.BRANCH_NAME == 'develop') {
 	            try {
