@@ -88,7 +88,7 @@ node (nodeLabel){
 			stage('Deploying tsf'){
 	//			sh 'python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "v${BUILD_ID}"'
 				sh 'pwd; ls -al'
-				sh '/usr/bin/python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "v34"'
+				sh '/usr/bin/python3 devopstest.py "${GRP_ID}" "${APP_NAME}" "v34"'
 			}
 		}
 	}
