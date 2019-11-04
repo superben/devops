@@ -1,0 +1,27 @@
+Jenkinsfile执行结果
+'/usr/local/lib/python3.6/site-packages', '/usr/lib64/python3.6/site-packages', '/usr/lib/python3.6/site-packages']
+group-9yngk44a
+tsf_100011309346/ibm-devops-demo
+v15
+{"GroupId":"group-9yngk44a","Version":"2018-03-26","Server":"ccr.ccs.tencentyun.com","Reponame":"tsf_100011309346/ibm-devops-demo","TagName":"v15","InstanceNum":2,"CpuRequest":"0.54","MemRequest":"1024"}
+params: {'GroupId': 'group-9yngk44a', 'Server': 'ccr.ccs.tencentyun.com', 'TagName': 'v15', 'InstanceNum': 2, 'Reponame': 'tsf_100011309346/ibm-devops-demo', 'CpuRequest': '0.54', 'MemRequest': '1024'}
+response: {'Response': {'Error': {'Code': 'AuthFailure.SignatureExpire', 'Message': '签名过期，请重新生成请求。'}, 'RequestId': '68ac215f-c0cc-423c-ae5b-1eb40f86db4b'}}
+Traceback (most recent call last):
+  File "devopstest.py", line 34, in <module>
+    deploycontainer()
+  File "devopstest.py", line 22, in deploycontainer
+    resp = client.DeployContainerGroup(req)
+  File "/usr/local/lib/python3.6/site-packages/tencentcloud/tsf/v20180326/tsf_client.py", line 555, in DeployContainerGroup
+    raise TencentCloudSDKException(code, message, reqid)
+tencentcloud.common.exception.tencent_cloud_sdk_exception.TencentCloudSDKException: [TencentCloudSDKException] code:AuthFailure.SignatureExpire message:签名过期，请重新生成请求。 requestId:68ac215f-c0cc-423c-ae5b-1eb40f86db4b
+
+
+
+本地执行结果
+/usr/local/Cellar/python/3.7.4_1/bin/python3 /Users/haitaoxing/PycharmProjects/tsf/devopstest.py group-9yngk44a ibm-devops-demo v34
+['/Users/haitaoxing/PycharmProjects/tsf', '/Users/haitaoxing/PycharmProjects/tsf', '/Applications/PyCharm.app/Contents/helpers/pycharm_display', '/usr/local/Cellar/python/3.7.4_1/Frameworks/Python.framework/Versions/3.7/lib/python37.zip', '/usr/local/Cellar/python/3.7.4_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7', '/usr/local/Cellar/python/3.7.4_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload', '/Users/haitaoxing/Library/Python/3.7/lib/python/site-packages', '/usr/local/lib/python3.7/site-packages', '/usr/local/Cellar/protobuf/3.10.0/libexec/lib/python3.7/site-packages', '/Applications/PyCharm.app/Contents/helpers/pycharm_matplotlib_backend']
+group-9yngk44a
+ibm-devops-demo
+v34
+{"GroupId":"group-9yngk44a","Version":"2018-03-26","Server":"ccr.ccs.tencentyun.com","Reponame":"tsf_100011309346/ibm-devops-demo","TagName":"v15","InstanceNum":2,"CpuRequest":"0.54","MemRequest":"1024"}
+{"Result": true, "RequestId": "ede5ad35-a3a5-45d0-bcb4-69e4f44318e1"}

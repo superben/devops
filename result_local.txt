@@ -1,0 +1,9 @@
+/usr/local/Cellar/python/3.7.4_1/bin/python3 /Users/haitaoxing/PycharmProjects/tsf/devopstest.py group-9yngk44a ibm-devops-demo v34
+['/Users/haitaoxing/PycharmProjects/tsf', '/Users/haitaoxing/PycharmProjects/tsf', '/Applications/PyCharm.app/Contents/helpers/pycharm_display', '/usr/local/Cellar/python/3.7.4_1/Frameworks/Python.framework/Versions/3.7/lib/python37.zip', '/usr/local/Cellar/python/3.7.4_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7', '/usr/local/Cellar/python/3.7.4_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload', '/Users/haitaoxing/Library/Python/3.7/lib/python/site-packages', '/usr/local/lib/python3.7/site-packages', '/usr/local/Cellar/protobuf/3.10.0/libexec/lib/python3.7/site-packages', '/Applications/PyCharm.app/Contents/helpers/pycharm_matplotlib_backend']
+group-9yngk44a
+ibm-devops-demo
+v34
+{"GroupId":"group-9yngk44a","Version":"2018-03-26","Server":"ccr.ccs.tencentyun.com","Reponame":"tsf_100011309346/ibm-devops-demo","TagName":"v16","InstanceNum":2,"CpuRequest":"0.54","MemRequest":"1024"}
+{"Result": true, "RequestId": "9c10c2f8-86ff-49fc-ab3d-638488da0cf3"}
+
+Process finished with exit code 0

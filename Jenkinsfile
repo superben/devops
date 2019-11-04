@@ -17,7 +17,7 @@ node (nodeLabel){
 					    checkout scm
 					}
 					
-	/*
+	
 					stage('Code scanning'){
 						echo "Begin code scanning"
 						def scannerHome = tool 'SonarQube Scanner';
@@ -58,13 +58,12 @@ node (nodeLabel){
 						}
 					}
 
-*/
 				}
 			} catch (err) {
 	            throw err
 	        }
 
-/*
+
 	        //junit for develop branch
 	        if (env.BRANCH_NAME == 'develop') {
 	            try {
@@ -82,13 +81,17 @@ node (nodeLabel){
 				def image = docker.build("${REGISTRY_URL}/${APP_NAME}:v${BUILD_ID}")
 	            image.push()
 		    }
-	*/
+
 			def flg="${dateVersion}-v${BUILD_ID}"
 			echo(flg)
 			stage('Deploying tsf'){
-	//			sh 'python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "v${BUILD_ID}"'
-				sh 'pwd; ls -al'
-				sh '/usr/bin/python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "v15"'
+	            agent {
+	                docker { image '10.7.116.236:31104/tsf_100000013/python-3:tsf' }
+	            }
+            	steps {
+					sh 'python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "v${BUILD_ID}"'
+					// sh '/usr/bin/python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "v15"'
+				}
 			}
 		}
 	}

@@ -1,0 +1,23 @@
++ python3 devopstest.py group-9yngk44a tsf_100011309346/ibm-devops-demo v16
+['/var/lib/jenkins/workspace/e2edevopspublic', '/usr/lib64/python36.zip', '/usr/lib64/python3.6', '/usr/lib64/python3.6/lib-dynload', '/usr/local/lib/python3.6/site-packages', '/usr/lib64/python3.6/site-packages', '/usr/lib/python3.6/site-packages']
+group-9yngk44a
+tsf_100011309346/ibm-devops-demo
+v16
+{"GroupId":"group-9yngk44a","Version":"2018-03-26","Server":"ccr.ccs.tencentyun.com","Reponame":"tsf_100011309346/ibm-devops-demo","TagName":"v16","InstanceNum":2,"CpuRequest":"0.54","MemRequest":"1024"}
+Traceback (most recent call last):
+  File "devopstest.py", line 34, in <module>
+    deploycontainer()
+  File "devopstest.py", line 22, in deploycontainer
+    resp = client.DeployContainerGroup(req)
+  File "/usr/local/lib/python3.6/site-packages/tencentcloud/tsf/v20180326/tsf_client.py", line 553, in DeployContainerGroup
+    raise TencentCloudSDKException(code, message, reqid)
+tencentcloud.common.exception.tencent_cloud_sdk_exception.TencentCloudSDKException: [TencentCloudSDKException] code:InternalError.CloudapiInvokeError message:调用云 API 失败，(305)tag不存在 (4000) requestId:37efea8b-4083-4dc7-9227-0e6489752c98
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
