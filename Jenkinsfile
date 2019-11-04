@@ -76,7 +76,7 @@ node (nodeLabel){
 	            }
 	        }
 			
-			def ver = "v" + ("v${BUILD_ID}".substring(1).toInteger() + 15)
+			def ver = "v" + ("v${BUILD_ID}".substring(1).toInteger() + 16)
 			stage('Push Image To Harbor') {
 				sh "docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD} ${REGISTRY_URL}"
 				def image = docker.build("${REGISTRY_URL}/${APP_NAME}:${ver}")
