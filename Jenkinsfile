@@ -77,6 +77,7 @@ node (nodeLabel){
 	        }
 			
 			def ver = "v" + ("v${BUILD_ID}".substring(1).toInteger() + 16)
+			echo(ver)
 			stage('Push Image To Harbor') {
 				sh "docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD} ${REGISTRY_URL}"
 				def image = docker.build("${REGISTRY_URL}/${APP_NAME}:${ver}")
@@ -84,13 +85,8 @@ node (nodeLabel){
 		    }
 
 			stage('Deploying tsf'){
-	            agent {
-	                docker { image '10.7.116.236:31104/tsf_100000013/python-3:tsf' }
-	            }
-            	steps {
-					sh 'python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "${ver}"'
-					// sh '/usr/bin/python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "v15"'
-				}
+				sh 'python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "${ver}"'
+				// sh '/usr/bin/python3 devopstest.py "${GRP_ID}" "tsf_100011309346/${APP_NAME}" "v15"'
 			}
 		}
 	}
