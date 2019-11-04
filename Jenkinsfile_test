@@ -1,0 +1,22 @@
+def nodeLabel = 'master'
+node (nodeLabel){
+	
+	echo "env.BRANCH_NAME"+env.BRANCH_NAME
+	if (env.BRANCH_NAME == 'develop' || env.BRANCH_NAME ==~ /^release\/.*/ || env.BRANCH_NAME == "master" || env.BRANCH_NAME == "production") {
+	withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin:/opt/apache-maven-3.5.4/bin'])
+		{
+			dateVersion = sh(script: "date \"+%Y%m%d%H%M%S\"", returnStdout: true).trim()
+
+			def flg="v${BUILD_ID}"
+			echo(flg)
+
+
+			stage('Deploying tsf'){
+            	steps {
+					
+					echo("{flg}")
+				}
+			}
+		}
+	}
+}
